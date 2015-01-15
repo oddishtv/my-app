@@ -22,4 +22,12 @@ public class FirstTest
         driver.get("http://www.compendiumdev.co.uk/selenium");
         assertTrue("failed on atempt to read page Title-Selenium Ximplified-", driver.getTitle().startsWith("Selenium Ximplified"));
     }
+
+    @Test
+    public void FirefoxIsSupported()
+    {
+        WebDriver driver = new FirefoxDriver();
+        driver.get("http://www.compendiumdev.co.uk/selenium");
+        assertTrue("failed on atempt to read page Title-Selenium Ximplified-", driver.getTitle().startsWith("Selenium Ximplified"));
+    }
 }
