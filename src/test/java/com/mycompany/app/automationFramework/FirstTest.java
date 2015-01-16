@@ -108,7 +108,7 @@ public class FirstTest
     /*@Test
     public void FirefoxIsSupported()
     {
-        driver.get("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn");
+        driver.get("111");
         WebElement login = driver.findElement(By.xpath("./*//*[@id='UserName']"));
         login.click();
         login.sendKeys("111");
