@@ -84,18 +84,18 @@ public class FirstTest
     driver.quit();
     }
 
-    @Test
+/*    @Test
     public void driverIsKing()
     {
         HtmlUnitDriver driver = new HtmlUnitDriver();
         driver.setJavascriptEnabled(true);
-        WebElement login = driver.findElementByXPath(".//*[@id='UserName']");
+        WebElement login = driver.findElementByXPath("./*//*[@id='UserName']");
         login.click();
         login.sendKeys("Voborskyi");
-        WebElement password = driver.findElementByXPath(".//*[@id='Password']");
+        WebElement password = driver.findElementByXPath("./*//*[@id='Password']");
         password.click();
         password.sendKeys("Kaway74+00");
-        WebElement loginClick = driver.findElementByXPath(".//*[@id='logon']/div/form/div[3]/button");
+        WebElement loginClick = driver.findElementByXPath("./*//*[@id='logon']/div/form/div[3]/button");
         loginClick.click();
 
         //driver.get("http://www.compendiumdev.co.uk/selenium");
@@ -103,7 +103,7 @@ public class FirstTest
 
        // assertTrue("failed on atempt to read page Title-Selenium Ximplified-", driver.getTitle().startsWith("Selenium Ximplified"));
        // driver.quit();
-    }
+    }*/
 
     @Test
     public void FirefoxIsSupported()

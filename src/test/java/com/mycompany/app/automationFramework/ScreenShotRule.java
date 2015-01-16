@@ -37,6 +37,7 @@ public class ScreenShotRule {
                         FileOutputStream out = new FileOutputStream("D:/reports/screenshot-" + fileName + ".png");
                         out.write(((TakesScreenshot) myDriver).getScreenshotAs(OutputType.BYTES));
                         out.close();
+                        myDriver.quit();
                     } catch (Exception e) {
                         // No need to crash the tests if the screenshot fails
                     }
