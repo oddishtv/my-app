@@ -14,9 +14,11 @@ import java.io.FileOutputStream;
  * Created by Vitalii_Oborskyi on 1/16/2015.
  */
 public class ScreenShotRule {
-    public static WebDriver driver;
-
-  public static class ScreenshotTestRule implements MethodRule {
+    public static class ScreenshotTestRule implements MethodRule {
+        private WebDriver myDriver;
+        ScreenshotTestRule(WebDriver dr){
+            myDriver = dr;
+        }
         public Statement apply(final Statement statement, final FrameworkMethod frameworkMethod, final Object o) {
             return new Statement() {
                 @Override
@@ -33,7 +35,7 @@ public class ScreenShotRule {
                     try {
                         new File("D:/reports/").mkdirs(); // Insure directory is there
                         FileOutputStream out = new FileOutputStream("D:/reports/screenshot-" + fileName + ".png");
-                        out.write(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
+                        out.write(((TakesScreenshot) myDriver).getScreenshotAs(OutputType.BYTES));
                         out.close();
                     } catch (Exception e) {
                         // No need to crash the tests if the screenshot fails

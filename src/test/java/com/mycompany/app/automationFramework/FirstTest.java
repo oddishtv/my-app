@@ -22,6 +22,7 @@ import java.io.FileOutputStream;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import com.mycompany.app.PageObjects.*;
+import com.mycompany.app.automationFramework.ScreenShotRule.*;
 
 /**
  * Unit test for simple App.
@@ -37,7 +38,11 @@ public class FirstTest
 
     public static WebDriver driver;
 
-    class ScreenshotTestRule implements MethodRule {
+/*    class ScreenshotTestRule implements MethodRule {
+        private WebDriver myDriver;
+        ScreenshotTestRule(WebDriver dr){
+        myDriver = dr;
+        }
         public Statement apply(final Statement statement, final FrameworkMethod frameworkMethod, final Object o) {
             return new Statement() {
                 @Override
@@ -54,7 +59,7 @@ public class FirstTest
                     try {
                         new File("D:/reports/").mkdirs(); // Insure directory is there
                         FileOutputStream out = new FileOutputStream("D:/reports/screenshot-" + fileName + ".png");
-                        out.write(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
+                        out.write(((TakesScreenshot) myDriver).getScreenshotAs(OutputType.BYTES));
                         out.close();
                     } catch (Exception e) {
                         // No need to crash the tests if the screenshot fails
@@ -62,10 +67,10 @@ public class FirstTest
                 }
             };
         }
-    }
+    }*/
 
     @Rule
-    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule();
+    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule(driver);
 
 
     @BeforeClass
