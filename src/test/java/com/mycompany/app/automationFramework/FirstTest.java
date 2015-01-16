@@ -105,23 +105,23 @@ public class FirstTest
        // driver.quit();
     }*/
 
-    @Test
+    /*@Test
     public void FirefoxIsSupported()
     {
         driver.get("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn");
-        WebElement login = driver.findElement(By.xpath(".//*[@id='UserName']"));
+        WebElement login = driver.findElement(By.xpath("./*//*[@id='UserName']"));
         login.click();
         login.sendKeys("Voborskyi");
-        WebElement password = driver.findElement(By.xpath(".//*[@id='Password']"));
+        WebElement password = driver.findElement(By.xpath("./*//*[@id='Password']"));
         password.click();
         password.sendKeys("Kaway74+00");
-        WebElement loginClick = driver.findElement(By.xpath(".//*[@id='logon']/div/form/div[3]/button"));
+        WebElement loginClick = driver.findElement(By.xpath("./*//*[@id='logon']/div/form/div[3]/button"));
         loginClick.click();
 
         //driver.get("http://www.compendiumdev.co.uk/selenium");
         assertTrue("passed", driver.getTitle().startsWith("Dashboard"));
     }
-
+*/
 
     @Test
     public void FirefoxwithPageObject()
