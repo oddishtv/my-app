@@ -32,4 +32,8 @@ public class LoginPage {
         return element;
 
     }
+    /*public static void open_Login_page(WebDriver driver) {
+    driver.navigate("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn?isExpired=true");
+
+    }*/
 }

@@ -22,7 +22,7 @@ import java.io.FileOutputStream;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import com.mycompany.app.PageObjects.*;
-import com.mycompany.app.automationFramework.ScreenShotRule.*;
+import com.mycompany.app.automationFramework.*;
 
 /**
  * Unit test for simple App.
@@ -70,7 +70,7 @@ public class FirstTest
     }*/
 
     @Rule
-    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule(driver);
+    public ScreenShotRule screenshotTestRule = new ScreenShotRule(driver);
 
 
     @BeforeClass
@@ -132,7 +132,7 @@ public class FirstTest
         LoginPage.login_button(driver).click();
 
         //driver.get("http://www.compendiumdev.co.uk/selenium");
-        assertTrue("passed", driver.getTitle().startsWith("Dashboard"));
+        assertTrue("passed", driver.getTitle().startsWith("Sashboard"));
     }
 
 }

@@ -13,10 +13,10 @@ import java.io.FileOutputStream;
 /**
  * Created by Vitalii_Oborskyi on 1/16/2015.
  */
-public class ScreenShotRule {
-    public static class ScreenshotTestRule implements MethodRule {
+public class ScreenShotRule  implements MethodRule {
+//    public class ScreenshotTestRule implements MethodRule {
         private WebDriver myDriver;
-        ScreenshotTestRule(WebDriver dr){
+            ScreenShotRule (WebDriver dr){
             myDriver = dr;
         }
         public Statement apply(final Statement statement, final FrameworkMethod frameworkMethod, final Object o) {
@@ -47,6 +47,6 @@ public class ScreenShotRule {
     }
 
 
-}
+//}
 
 
