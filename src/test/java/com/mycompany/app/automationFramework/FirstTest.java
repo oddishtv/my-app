@@ -1,28 +1,28 @@
 package com.mycompany.app.automationFramework;
 
 
-import com.thoughtworks.selenium.Selenium;
-import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
+//import com.thoughtworks.selenium.Selenium;
+//import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
-import org.openqa.selenium.By;
+//import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import static junit.framework.Assert.assertFalse;
+//import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+//import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
-import org.junit.rules.MethodRule;
-import org.junit.runners.model.Statement;
-import org.junit.runners.model.FrameworkMethod;
-import java.io.File;
-import java.io.FileOutputStream;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+//import org.junit.rules.MethodRule;
+//import org.junit.runners.model.Statement;
+//import org.junit.runners.model.FrameworkMethod;
+//import java.io.File;
+//import java.io.FileOutputStream;
+//import org.openqa.selenium.OutputType;
+//import org.openqa.selenium.TakesScreenshot;
 import com.mycompany.app.PageObjects.*;
-import com.mycompany.app.automationFramework.*;
+//import com.mycompany.app.automationFramework.*;
 
 /**
  * Unit test for simple App.
