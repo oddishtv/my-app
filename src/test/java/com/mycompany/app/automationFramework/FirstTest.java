@@ -91,10 +91,10 @@ public class FirstTest
         driver.setJavascriptEnabled(true);
         WebElement login = driver.findElementByXPath("./*//*[@id='UserName']");
         login.click();
-        login.sendKeys("Voborskyi");
+        login.sendKeys("111");
         WebElement password = driver.findElementByXPath("./*//*[@id='Password']");
         password.click();
-        password.sendKeys("Kaway74+00");
+        password.sendKeys("111");
         WebElement loginClick = driver.findElementByXPath("./*//*[@id='logon']/div/form/div[3]/button");
         loginClick.click();
 
@@ -111,10 +111,10 @@ public class FirstTest
         driver.get("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn");
         WebElement login = driver.findElement(By.xpath("./*//*[@id='UserName']"));
         login.click();
-        login.sendKeys("Voborskyi");
+        login.sendKeys("111");
         WebElement password = driver.findElement(By.xpath("./*//*[@id='Password']"));
         password.click();
-        password.sendKeys("Kaway74+00");
+        password.sendKeys("111");
         WebElement loginClick = driver.findElement(By.xpath("./*//*[@id='logon']/div/form/div[3]/button"));
         loginClick.click();
 
@@ -126,10 +126,10 @@ public class FirstTest
     @Test
     public void FirefoxwithPageObject()
     {
-        //driver.get("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn");
+        //driver.get("111");
         LoginPage.open_Login_page(driver);
-        LoginPage.select_UserName(driver).sendKeys("Voborskyi");
-        LoginPage.select_Password(driver).sendKeys("Kaway74+00");
+        LoginPage.select_UserName(driver).sendKeys("111");
+        LoginPage.select_Password(driver).sendKeys("111");
         LoginPage.login_button(driver).click();
 
         //driver.get("http://www.compendiumdev.co.uk/selenium");

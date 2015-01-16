@@ -32,7 +32,7 @@ public class LoginPage {
 
     }
     public static void open_Login_page(WebDriver driver) {
-    driver.get("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn?isExpired=true");
+    driver.get("111");
 
     }
 }
