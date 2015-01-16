@@ -126,7 +126,8 @@ public class FirstTest
     @Test
     public void FirefoxwithPageObject()
     {
-        driver.get("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn");
+        //driver.get("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn");
+        LoginPage.open_Login_page(driver);
         LoginPage.select_UserName(driver).sendKeys("Voborskyi");
         LoginPage.select_Password(driver).sendKeys("Kaway74+00");
         LoginPage.login_button(driver).click();

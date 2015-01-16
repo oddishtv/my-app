@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
  */
 public class LoginPage {
     private static WebElement element = null;
-
     public static WebElement login_button(WebDriver driver){
 
         element = driver.findElement(By.xpath(".//*[@id='logon']/div/form/div[3]/button"));
@@ -32,8 +31,8 @@ public class LoginPage {
         return element;
 
     }
-    /*public static void open_Login_page(WebDriver driver) {
-    driver.navigate("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn?isExpired=true");
+    public static void open_Login_page(WebDriver driver) {
+    driver.get("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn?isExpired=true");
 
-    }*/
+    }
 }
