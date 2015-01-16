@@ -33,8 +33,7 @@ public class FirstTest
 
 
 
-    private static WebDriver driver;
-    private static Selenium selenium;
+    public static WebDriver driver;
 
     class ScreenshotTestRule implements MethodRule {
         public Statement apply(final Statement statement, final FrameworkMethod frameworkMethod, final Object o) {
@@ -73,12 +72,12 @@ public class FirstTest
     }
 
 
-/*    @AfterClass
+    @AfterClass
     public static void afterClass() {
     driver.quit();
     }
-*/
-/*    @Test
+
+    @Test
     public void driverIsKing()
     {
         HtmlUnitDriver driver = new HtmlUnitDriver();
@@ -98,7 +97,7 @@ public class FirstTest
        // assertTrue("failed on atempt to read page Title-Selenium Ximplified-", driver.getTitle().startsWith("Selenium Ximplified"));
        // driver.quit();
     }
-*/
+
     @Test
     public void FirefoxIsSupported()
     {
@@ -113,6 +112,6 @@ public class FirstTest
         loginClick.click();
 
         //driver.get("http://www.compendiumdev.co.uk/selenium");
-        assertTrue("passed", driver.getTitle().startsWith("Sashboard"));
+        assertTrue("passed", driver.getTitle().startsWith("Dashboard"));
     }
 }
