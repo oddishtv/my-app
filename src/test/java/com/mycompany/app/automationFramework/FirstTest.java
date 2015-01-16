@@ -1,4 +1,4 @@
-package com.mycompany.app;
+package com.mycompany.app.automationFramework;
 
 
 import com.thoughtworks.selenium.Selenium;
@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import com.mycompany.app.PageObjects.*;
 
 /**
  * Unit test for simple App.
@@ -30,6 +31,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class FirstTest
 {
+
 
 
 
@@ -114,4 +116,21 @@ public class FirstTest
         //driver.get("http://www.compendiumdev.co.uk/selenium");
         assertTrue("passed", driver.getTitle().startsWith("Dashboard"));
     }
+
+
+    @Test
+    public void FirefoxwithPageObject()
+    {
+        driver.get("http://dca2chup6web01.mscorp.com/CHUPTrunk/testalias/Administration/Account/LogOn");
+        LoginPage.select_UserName(driver).sendKeys("Voborskyi");
+        LoginPage.select_Password(driver).sendKeys("Kaway74+00");
+        LoginPage.login_button(driver).click();
+
+        //driver.get("http://www.compendiumdev.co.uk/selenium");
+        assertTrue("passed", driver.getTitle().startsWith("Dashboard"));
+    }
+
 }
+
+
+

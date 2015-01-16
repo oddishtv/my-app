@@ -1,4 +1,4 @@
-package com.mycompany.app;
+package com.mycompany.app.automationFramework;
 
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
