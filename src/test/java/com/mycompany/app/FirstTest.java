@@ -14,7 +14,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
-
+import org.junit.rules.MethodRule;
+import org.junit.runners.model.Statement;
+import org.junit.runners.model.FrameworkMethod;
+import java.io.File;
+import java.io.FileOutputStream;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 /**
  * Unit test for simple App.
@@ -30,8 +36,35 @@ public class FirstTest
     private static WebDriver driver;
     private static Selenium selenium;
 
-//    @Rule
-//    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule();
+    class ScreenshotTestRule implements MethodRule {
+        public Statement apply(final Statement statement, final FrameworkMethod frameworkMethod, final Object o) {
+            return new Statement() {
+                @Override
+                public void evaluate() throws Throwable {
+                    try {
+                        statement.evaluate();
+                    } catch (Throwable t) {
+                        captureScreenshot(frameworkMethod.getName());
+                        throw t; // rethrow to allow the failure to be reported to JUnit
+                    }
+                }
+
+                public void captureScreenshot(String fileName) {
+                    try {
+                        new File("D:/reports/").mkdirs(); // Insure directory is there
+                        FileOutputStream out = new FileOutputStream("D:/reports/screenshot-" + fileName + ".png");
+                        out.write(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
+                        out.close();
+                    } catch (Exception e) {
+                        // No need to crash the tests if the screenshot fails
+                    }
+                }
+            };
+        }
+    }
+
+    @Rule
+    public ScreenshotTestRule screenshotTestRule = new ScreenshotTestRule();
 
 
     @BeforeClass
@@ -80,6 +113,6 @@ public class FirstTest
         loginClick.click();
 
         //driver.get("http://www.compendiumdev.co.uk/selenium");
-        assertTrue("passed", driver.getTitle().startsWith("Dashboard"));
+        assertTrue("passed", driver.getTitle().startsWith("Sashboard"));
     }
 }
