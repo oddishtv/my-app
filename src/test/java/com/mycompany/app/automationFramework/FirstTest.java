@@ -118,7 +118,7 @@ public class FirstTest
         WebElement loginClick = driver.findElement(By.xpath("./*//*[@id='logon']/div/form/div[3]/button"));
         loginClick.click();
 
-        //driver.get("http://www.compendiumdev.co.uk/selenium");
+        //driver.get("http://www.compe121312ndiumdev.co.uk/selenium");
         assertTrue("passed", driver.getTitle().startsWith("Dashboard"));
     }
 */
