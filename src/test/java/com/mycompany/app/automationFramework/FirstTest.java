@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 //import org.openqa.selenium.By;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,6 +24,8 @@ import static junit.framework.Assert.assertTrue;
 //import org.openqa.selenium.OutputType;
 //import org.openqa.selenium.TakesScreenshot;
 import com.mycompany.app.PageObjects.*;
+
+import javax.xml.xpath.XPath;
 //import com.mycompany.app.automationFramework.*;
 
 /**
@@ -124,6 +127,7 @@ public class FirstTest
     }
 */
 
+/*
     @Test
     public void FirefoxwithPageObject()
     {
@@ -135,6 +139,25 @@ public class FirstTest
 
         //driver.get("http://www.compendiumdev.co.uk/selenium");
         assertTrue("passed", driver.getTitle().startsWith("Sashboard"));
+    }
+*/
+    //Find Перчатки охотничьи Gamo Canada Brown M (458094227M)
+    @Test
+    public void SearchWithXPath()
+    {
+        String textToLookup = "Перчатки охотничьи Gamo Canada Brown M (458094227M)";
+        MainPage.open(driver);
+        MainPage.xpath_search_field(driver).click();
+        MainPage.xpath_search_field(driver).sendKeys("Перчатки охотничьи Gamo Canada Brown M (458094227M)");
+        MainPage.xpath_search_button_click(driver);
+        String foundtext = driver.findElement(By.xpath("//div/div/div[3]/div/div[2]/div[1]/a")).getText().toString();
+        //foundtext = foundtext.substring(0, foundtext.length() - 1);
+    assertTrue("passed", foundtext.equals(textToLookup));
+//        boolean flag = foundtext.equals(textToLookup);
+/*        if (foundtext.equals(textToLookup))
+        {
+            System.out.println("Passed");
+        }*/
     }
 
 }
