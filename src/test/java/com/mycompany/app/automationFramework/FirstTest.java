@@ -148,16 +148,28 @@ public class FirstTest
         String textToLookup = "Перчатки охотничьи Gamo Canada Brown M (458094227M)";
         MainPage.open(driver);
         MainPage.xpath_search_field(driver).click();
-        MainPage.xpath_search_field(driver).sendKeys("Перчатки охотничьи Gamo Canada Brown M (458094227M)");
+
+        MainPage.xpath_search_field(driver).sendKeys(textToLookup);
         MainPage.xpath_search_button_click(driver);
         String foundtext = driver.findElement(By.xpath("//div/div/div[3]/div/div[2]/div[1]/a")).getText().toString();
-        //foundtext = foundtext.substring(0, foundtext.length() - 1);
-    assertTrue("passed", foundtext.equals(textToLookup));
-//        boolean flag = foundtext.equals(textToLookup);
-/*        if (foundtext.equals(textToLookup))
-        {
-            System.out.println("Passed");
-        }*/
+        assertTrue("passed", foundtext.equals(textToLookup));
+
+    }
+
+    @Test
+    public void SearchWithCSS()
+    {
+        String textToLookup = "Перчатки охотничьи Gamo Canada Brown M (458094227M)";
+        MainPage.open(driver);
+        MainPage.css_search_field(driver).click();
+
+        MainPage.css_search_field(driver).sendKeys(textToLookup);
+        MainPage.css_search_button_click(driver);
+        String foundtext = driver.findElement(By.cssSelector("div.g-i-list-right-part div.g-i-list-title a")).getText().toString();
+        assertTrue("passed", foundtext.equals(textToLookup));
+
+
+
     }
 
 }

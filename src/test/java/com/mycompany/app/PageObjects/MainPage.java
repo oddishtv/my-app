@@ -22,9 +22,22 @@ public class MainPage {
 
     }
 
+    public static WebElement css_search_field(WebDriver driver){
+
+        element = driver.findElement(By.cssSelector("input.header-search-input-text"));
+
+        return element;
+
+    }
+
     public static void xpath_search_button_click(WebDriver driver){
 
         driver.findElement(By.xpath("//div[2]/form/div[1]/span/button[@type = 'submit']")).click();
+
+    }
+    public static void css_search_button_click(WebDriver driver){
+
+        driver.findElement(By.cssSelector("span.btn-link.btn-link-green.header-search-submit button.btn-link-i")).click();
 
     }
 }
