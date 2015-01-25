@@ -40,4 +40,14 @@ public class MainPage {
         driver.findElement(By.cssSelector("span.btn-link.btn-link-green.header-search-submit button.btn-link-i")).click();
 
     }
+
+    //driver.findElement(By.xpath("//td[1]/div/a[@class = \"m-main-title\" and @name=\"active-elem\"]"));
+
+    public static WebElement xpath_tab_notebooks(WebDriver driver){
+
+       element = driver.findElement(By.xpath("//td[1]/div/a[@class = \"m-main-title\" and @name=\"active-elem\"]"));
+
+        return element;
+
+    }
 }

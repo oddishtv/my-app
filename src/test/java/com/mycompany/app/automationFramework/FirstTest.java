@@ -1,34 +1,23 @@
 package com.mycompany.app.automationFramework;
 
 
-//import com.thoughtworks.selenium.Selenium;
-//import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
+import com.mycompany.app.PHelpers.*;
+import com.mycompany.app.PHelpers.Helpers;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
-//import org.openqa.selenium.By;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-//import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-//import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertTrue;
-//import org.junit.rules.MethodRule;
-//import org.junit.runners.model.Statement;
-//import org.junit.runners.model.FrameworkMethod;
-//import java.io.File;
-//import java.io.FileOutputStream;
-//import org.openqa.selenium.OutputType;
-//import org.openqa.selenium.TakesScreenshot;
+
+import static com.mycompany.app.PHelpers.Helpers.move_mouse_on;
+import static junit.framework.Assert.*;
 import com.mycompany.app.PageObjects.*;
 
-import javax.xml.xpath.XPath;
 import java.util.List;
-//import com.mycompany.app.automationFramework.*;
+
 
 /**
  * Unit test for simple App.
@@ -197,6 +186,17 @@ public class FirstTest
         assertTrue("Found gloves", numberFound.size() == counterDigitsOnly);
 
     }
+
+    //Move mouse on Notebooks tab
+    @Test
+    public void MoveMouseOnNotebooksWithXPath()
+    {
+
+        MainPage.open(driver);
+        move_mouse_on(driver, MainPage.xpath_tab_notebooks(driver));
+
+    }
+
 
 }
 

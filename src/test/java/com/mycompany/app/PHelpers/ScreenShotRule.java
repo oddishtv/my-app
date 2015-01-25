@@ -1,4 +1,4 @@
-package com.mycompany.app.automationFramework;
+package com.mycompany.app.PHelpers;
 
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
@@ -16,7 +16,7 @@ import java.io.FileOutputStream;
 public class ScreenShotRule  implements MethodRule {
 //    public class ScreenshotTestRule implements MethodRule {
         private WebDriver myDriver;
-            ScreenShotRule (WebDriver dr){
+            public ScreenShotRule(WebDriver dr){
             myDriver = dr;
         }
         public Statement apply(final Statement statement, final FrameworkMethod frameworkMethod, final Object o) {
