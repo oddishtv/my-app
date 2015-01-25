@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -26,6 +27,7 @@ import static junit.framework.Assert.assertTrue;
 import com.mycompany.app.PageObjects.*;
 
 import javax.xml.xpath.XPath;
+import java.util.List;
 //import com.mycompany.app.automationFramework.*;
 
 /**
@@ -152,9 +154,12 @@ public class FirstTest
         MainPage.xpath_search_field(driver).sendKeys(textToLookup);
         MainPage.xpath_search_button_click(driver);
         String foundtext = driver.findElement(By.xpath("//div/div/div[3]/div/div[2]/div[1]/a")).getText().toString();
-        assertTrue("passed", foundtext.equals(textToLookup));
+        assertTrue("search counter is correct", driver.findElement(By.xpath("//p[@class='search-result-count']")).getText().toString().equals("Найдено 1 товар"));
+        assertTrue("Found gloves", foundtext.equals(textToLookup));
 
     }
+
+    //Find Перчатки охотничьи Gamo Canada Brown M (458094227M) using CSS
 
     @Test
     public void SearchWithCSS()
@@ -169,6 +174,23 @@ public class FirstTest
         assertTrue("passed", foundtext.equals(textToLookup));
 
 
+
+    }
+
+    //Find Перчатки охотничьи Gamo. Check that 8 counted as a search  result and that actually 8 returned.
+    @Test
+    public void Search8WithXPath()
+    {
+        String textToLookup = "Перчатки охотничьи Gamo";
+        MainPage.open(driver);
+        MainPage.xpath_search_field(driver).click();
+
+        MainPage.xpath_search_field(driver).sendKeys(textToLookup);
+        MainPage.xpath_search_button_click(driver);
+        List<WebElement> numberFound = driver.findElements(By.xpath("//div[2]/div[1]/a[@onclick]"));
+        numberFound.size();
+        assertTrue("search counter is correct and = 8", driver.findElement(By.xpath("//p[@class='search-result-count']")).getText().toString().equals("Найдено 8 товаров"));
+        assertTrue("Found gloves", numberFound.size() == 8);
 
     }
 
