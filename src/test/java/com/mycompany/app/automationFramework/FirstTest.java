@@ -179,18 +179,22 @@ public class FirstTest
 
     //Find Перчатки охотничьи Gamo. Check that 8 counted as a search  result and that actually 8 returned.
     @Test
-    public void Search8WithXPath()
+    public void SearchNumberWithXPath()
     {
         String textToLookup = "Перчатки охотничьи Gamo";
+
         MainPage.open(driver);
         MainPage.xpath_search_field(driver).click();
 
         MainPage.xpath_search_field(driver).sendKeys(textToLookup);
         MainPage.xpath_search_button_click(driver);
+
         List<WebElement> numberFound = driver.findElements(By.xpath("//div[2]/div[1]/a[@onclick]"));
-        numberFound.size();
-        assertTrue("search counter is correct and = 8", driver.findElement(By.xpath("//p[@class='search-result-count']")).getText().toString().equals("Найдено 8 товаров"));
-        assertTrue("Found gloves", numberFound.size() == 8);
+        String counterAndText = driver.findElement(By.xpath("//p[@class='search-result-count']")).getText().toString();
+        int counterDigitsOnly = Integer.parseInt(counterAndText.replaceAll("[^0-9]", ""));
+
+        assertTrue("search counter is correct and = 8", driver.findElement(By.xpath("//p[@class='search-result-count']")).getText().toString().equals("Найдено " + counterDigitsOnly + " товаров"));
+        assertTrue("Found gloves", numberFound.size() == counterDigitsOnly);
 
     }
 
