@@ -1,8 +1,8 @@
 package com.mycompany.app.automationFramework;
 
 
-import com.mycompany.app.PHelpers.*;
-import com.mycompany.app.PHelpers.Helpers;
+import com.mycompany.app.PHelpers.ScreenShotRule;
+import com.mycompany.app.PageObjects.MainPage;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -12,11 +12,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import static com.mycompany.app.PHelpers.Helpers.move_mouse_on;
-import static junit.framework.Assert.*;
-import com.mycompany.app.PageObjects.*;
-
 import java.util.List;
+
+import static com.mycompany.app.PHelpers.Helpers.move_mouse_on;
+import static junit.framework.Assert.assertTrue;
 
 
 /**
