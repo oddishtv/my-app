@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static com.mycompany.app.PHelpers.Helpers.move_mouse_on;
 import static junit.framework.Assert.assertTrue;
@@ -193,7 +194,8 @@ public class FirstTest
 
         MainPage.open(driver);
         move_mouse_on(driver, MainPage.xpath_tab_notebooks(driver));
-
+        boolean flag = driver.findElement(By.xpath("//td[1]/div/div[@class=\"popup-css popup-css-green m-main-fat m-main-fat1\" and @name=\"drop-elem\"]")).isDisplayed();
+        assertTrue("Is displayed?", driver.findElement(By.xpath("//td[1]/div/div[@class=\"popup-css popup-css-green m-main-fat m-main-fat1\" and @name=\"drop-elem\"]")).isDisplayed());
     }
 
 

@@ -15,9 +15,9 @@ public class Helpers {
 
 //        WebElement el = driver.findElement(By.xpath("//td[1]/div/a[@class = \"m-main-title\" and @name=\"active-elem\"]"));
         Actions builder = new Actions(driver);
-        builder.moveToElement(el).click();
+        builder.moveToElement(el);
         builder.perform();
-        driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 
 
     }
