@@ -17,7 +17,7 @@ public class Helpers {
         Actions builder = new Actions(driver);
         builder.moveToElement(el);
         builder.perform();
-        driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
 
 
     }

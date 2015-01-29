@@ -200,6 +200,21 @@ public class FirstTest
     }
 
 
+    //Enable checkbox and then check hat it's enabled
+    @Test
+    public void CheckboxCheckGetEnabled()
+    {
+
+        MainPage.open(driver);
+        move_mouse_on(driver, MainPage.xpath_tab_notebooks(driver));
+        driver.findElement(By.xpath("//a[contains(., 'Подставки для ноутбуков')]")).click();
+        ////label/input[@onclick="window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'"]
+        driver.findElement(By.xpath("//label/input[@onclick=\"window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'\"]")).click();
+        boolean flag = driver.findElement(By.xpath("//label/input[@onclick=\"window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/'\"]")).isEnabled();
+        flag = flag;
+     //   assertTrue("Is enabled?", driver.findElement(By.xpath("//label/input[@onclick=\"window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'\"]")).isEnabled());
+    }
+
 }
 
 
