@@ -74,10 +74,10 @@ public class FirstTest
     }
 
 
-/*    @AfterClass
+    @AfterClass
     public static void afterClass() {
     driver.quit();
-    }*/
+    }
 
 /*    @Test
     public void driverIsKing()
@@ -196,7 +196,7 @@ public class FirstTest
         move_mouse_on(driver, MainPage.xpath_tab_notebooks(driver));
         driver.findElement(By.xpath("//a[contains(., 'Подставки для ноутбуков')]")).click();
         //boolean flag = driver.findElement(By.xpath("//td[1]/div/div[@class=\"popup-css popup-css-green m-main-fat m-main-fat1\" and @name=\"drop-elem\"]")).isDisplayed();
-        //assertTrue("Is displayed?", driver.findElement(By.xpath("//td[1]/div/div[@class=\"popup-css popup-css-green m-main-fat m-main-fat1\" and @name=\"drop-elem\"]")).isDisplayed());
+       assertTrue("Is opened appropriate section?", driver.getTitle().contains("Подставки и столики"));
     }
 
 
