@@ -74,10 +74,10 @@ public class FirstTest
     }
 
 
-    @AfterClass
+/*    @AfterClass
     public static void afterClass() {
     driver.quit();
-    }
+    }*/
 
 /*    @Test
     public void driverIsKing()
@@ -182,7 +182,7 @@ public class FirstTest
         String counterAndText = driver.findElement(By.xpath("//p[@class='search-result-count']")).getText().toString();
         int counterDigitsOnly = Integer.parseInt(counterAndText.replaceAll("[^0-9]", ""));
 
-        assertTrue("search counter is correct and = 8", driver.findElement(By.xpath("//p[@class='search-result-count']")).getText().toString().equals("Найдено " + counterDigitsOnly + " товаров"));
+        assertTrue("search counter is correct and equal to " + counterDigitsOnly, driver.findElement(By.xpath("//p[@class='search-result-count']")).getText().toString().equals("Найдено " + counterDigitsOnly + " товаров"));
         assertTrue("Found gloves", numberFound.size() == counterDigitsOnly);
 
     }
@@ -194,8 +194,9 @@ public class FirstTest
 
         MainPage.open(driver);
         move_mouse_on(driver, MainPage.xpath_tab_notebooks(driver));
-        boolean flag = driver.findElement(By.xpath("//td[1]/div/div[@class=\"popup-css popup-css-green m-main-fat m-main-fat1\" and @name=\"drop-elem\"]")).isDisplayed();
-        assertTrue("Is displayed?", driver.findElement(By.xpath("//td[1]/div/div[@class=\"popup-css popup-css-green m-main-fat m-main-fat1\" and @name=\"drop-elem\"]")).isDisplayed());
+        driver.findElement(By.xpath("//a[contains(., 'Подставки для ноутбуков')]")).click();
+        //boolean flag = driver.findElement(By.xpath("//td[1]/div/div[@class=\"popup-css popup-css-green m-main-fat m-main-fat1\" and @name=\"drop-elem\"]")).isDisplayed();
+        //assertTrue("Is displayed?", driver.findElement(By.xpath("//td[1]/div/div[@class=\"popup-css popup-css-green m-main-fat m-main-fat1\" and @name=\"drop-elem\"]")).isDisplayed());
     }
 
 
