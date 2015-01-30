@@ -208,19 +208,17 @@ public class FirstTest
         MainPage.open(driver);
         move_mouse_on(driver, MainPage.xpath_tab_notebooks(driver));
         driver.findElement(By.xpath("//a[contains(., 'Подставки для ноутбуков')]")).click();
-        ////label/input[@onclick="window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'"]
         String urlToCheck = driver.findElement(By.xpath("//div[1]/ul/li[1]/label/input[@onclick]")).getAttribute("onclick");
-        String urlToCheck1 = urlToCheck.substring(urlToCheck.indexOf("='"),urlToCheck.indexOf("'\""));
-        //urlToCheck = urlToCheck.replace("input type=\"checkbox\" onclick=\"window.location='", "");
-        urlToCheck1 = urlToCheck1.replaceAll("\"", "");
-        urlToCheck1 = urlToCheck1.replaceAll("'", "");
-        urlToCheck = urlToCheck;
-        driver.findElement(By.xpath("//label/input[@onclick=\"window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'\"]")).click();
-       String link = driver.getCurrentUrl();
-        link = link;
-        String checkbox = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div[1]/div[3]/div[1]/div/div/div/div[3]/form/div[1]/ul/li[1]/label/input")).toString();
-        checkbox = checkbox;
-     //   assertTrue("Is enabled?", driver.findElement(By.xpath("//label/input[@onclick=\"window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'\"]")).isEnabled());
+        String urlToCheckCrop = urlToCheck.substring(urlToCheck.indexOf("'") + 1,urlToCheck.lastIndexOf("'"));
+        driver.findElement(By.xpath("//div[1]/ul/li[1]/label/input[@onclick]")).click();
+        String link = driver.getCurrentUrl();
+        String labelOfCheckbox = driver.findElement(By.xpath("//div[1]/ul/li[1]/label/a/span")).getText().toString();
+        String labelOfUnchecker = driver.findElement(By.xpath("//a[@class='filter-active-i-link']")).getText().toString();
+
+        assertTrue("When Checkbox clicked is appropriate page opens?", link.equals(urlToCheckCrop));
+        assertTrue("Is checkbox enabled now?", driver.findElement(By.xpath("//input[@checked]")).isEnabled());
+        assertTrue("Is label for unckecker the same as checkbox have?", labelOfCheckbox.equals(labelOfUnchecker));
+
     }
 
 }
