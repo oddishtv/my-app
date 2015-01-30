@@ -210,8 +210,10 @@ public class FirstTest
         driver.findElement(By.xpath("//a[contains(., 'Подставки для ноутбуков')]")).click();
         ////label/input[@onclick="window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'"]
         driver.findElement(By.xpath("//label/input[@onclick=\"window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'\"]")).click();
-        boolean flag = driver.findElement(By.xpath("//label/input[@onclick=\"window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/'\"]")).isEnabled();
-        flag = flag;
+       String link = driver.getCurrentUrl();
+        link = link;
+        String checkbox = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div[1]/div[3]/div[1]/div/div/div/div[3]/form/div[1]/ul/li[1]/label/input")).toString();
+        checkbox = checkbox;
      //   assertTrue("Is enabled?", driver.findElement(By.xpath("//label/input[@onclick=\"window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'\"]")).isEnabled());
     }
 
