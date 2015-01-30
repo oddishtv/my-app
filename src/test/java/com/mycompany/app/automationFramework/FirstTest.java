@@ -209,9 +209,11 @@ public class FirstTest
         move_mouse_on(driver, MainPage.xpath_tab_notebooks(driver));
         driver.findElement(By.xpath("//a[contains(., 'Подставки для ноутбуков')]")).click();
         ////label/input[@onclick="window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'"]
-        String urlToCheck = driver.findElement(By.xpath("//div[1]/ul/li[1]/label/input/@onclick]")).toString();
-        urlToCheck = urlToCheck.replace("window.location='", "");
-        urlToCheck = urlToCheck.replace("'", "");
+        String urlToCheck = driver.findElement(By.xpath("//div[1]/ul/li[1]/label/input[@onclick]")).getAttribute("onclick");
+        String urlToCheck1 = urlToCheck.substring(urlToCheck.indexOf("='"),urlToCheck.indexOf("'\""));
+        //urlToCheck = urlToCheck.replace("input type=\"checkbox\" onclick=\"window.location='", "");
+        urlToCheck1 = urlToCheck1.replaceAll("\"", "");
+        urlToCheck1 = urlToCheck1.replaceAll("'", "");
         urlToCheck = urlToCheck;
         driver.findElement(By.xpath("//label/input[@onclick=\"window.location='http://rozetka.com.ua/notebook_stands/arctic-cooling/c183690/v509/'\"]")).click();
        String link = driver.getCurrentUrl();
