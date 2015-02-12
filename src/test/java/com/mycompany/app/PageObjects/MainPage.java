@@ -14,6 +14,8 @@ public class MainPage {
         driver.get("http://rozetka.com.ua/");
 
     }
+
+
     public static WebElement xpath_search_field(WebDriver driver){
 
         element = driver.findElement(By.xpath("//div[2]/form/div[2]/div[1]/input[@class = 'header-search-input-text']"));

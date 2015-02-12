@@ -3,6 +3,7 @@ package com.mycompany.app.automationFramework;
 
 import com.mycompany.app.PHelpers.ScreenShotRule;
 import com.mycompany.app.PageObjects.MainPage;
+import com.mycompany.app.PageObjects.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -71,6 +72,7 @@ public class FirstTest
     @BeforeClass
     public static void beforeClass() {
         driver = new FirefoxDriver();
+        driver.manage().window().maximize();
     }
 
 
@@ -220,7 +222,27 @@ public class FirstTest
         assertTrue("Is label for unckecker the same as checkbox have?", labelOfCheckbox.equals(labelOfUnchecker));
 
     }
+    // поработать с dropdowns
 
+    public void workWithDropDowns()
+    {
+
+
+
+    }
+
+    // поработать с алертами
+
+
+
+    // поработать с окнами
+    // поработать с фреймами
+    // поработать с выпадающими списками
+    // поработать с радиобаттонами
+    //параметризация в джюнит и ддт
+    //page object and page element
+    //add properties file
+    //add to pageobject return for a page and checks that needed page opens
 }
 
 
