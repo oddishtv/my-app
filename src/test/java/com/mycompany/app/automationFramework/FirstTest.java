@@ -13,10 +13,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static com.mycompany.app.PHelpers.Helpers.close_tab;
 import static com.mycompany.app.PHelpers.Helpers.move_mouse_on;
+import static com.mycompany.app.PHelpers.Helpers.new_tab;
 import static junit.framework.Assert.assertTrue;
 
 
@@ -78,7 +81,7 @@ public class FirstTest
 
     @AfterClass
     public static void afterClass() {
-    driver.quit();
+ //   driver.quit();
     }
 
 /*    @Test
@@ -224,6 +227,7 @@ public class FirstTest
     }
     // поработать с dropdowns
 
+    @Test
     public void workWithDropDowns()
     {
 
@@ -236,8 +240,22 @@ public class FirstTest
 
 
     // поработать с окнами
+    @Test
+    public void workWithWindows()
+    {
+        MainPage.open(driver);
+        new_tab(driver);
+        driver.getWindowHandles();
+        driver.getWindowHandles();
+        MainPage.open(driver);
+        ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+        //close_tab(driver);
+
+
+    }
+
     // поработать с фреймами
-    // поработать с выпадающими списками
     // поработать с радиобаттонами
     //параметризация в джюнит и ддт
     //page object and page element
