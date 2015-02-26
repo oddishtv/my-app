@@ -22,6 +22,8 @@ import static com.mycompany.app.PHelpers.Helpers.move_mouse_on;
 import static com.mycompany.app.PHelpers.Helpers.new_tab;
 import static junit.framework.Assert.assertTrue;
 
+import com.mycompany.app.PHelpers.*;
+
 
 /**
  * Unit test for simple App.
@@ -244,18 +246,21 @@ public class FirstTest
     public void workWithWindows()
     {
         MainPage.open(driver);
+        String handle = driver.getWindowHandle();
         new_tab(driver);
-        driver.getWindowHandles();
-        driver.getWindowHandles();
+        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
         MainPage.open(driver);
         ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(1));
         //close_tab(driver);
 
 
+
     }
 
     // поработать с фреймами
+
+
     // поработать с радиобаттонами
     //параметризация в джюнит и ддт
     //page object and page element

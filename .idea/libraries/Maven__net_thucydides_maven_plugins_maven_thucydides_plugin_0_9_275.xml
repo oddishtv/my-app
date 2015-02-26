@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: net.thucydides.maven.plugins:maven-thucydides-plugin:0.9.275">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/thucydides/maven/plugins/maven-thucydides-plugin/0.9.275/maven-thucydides-plugin-0.9.275.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/net/thucydides/maven/plugins/maven-thucydides-plugin/0.9.275/maven-thucydides-plugin-0.9.275-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/thucydides/maven/plugins/maven-thucydides-plugin/0.9.275/maven-thucydides-plugin-0.9.275-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
